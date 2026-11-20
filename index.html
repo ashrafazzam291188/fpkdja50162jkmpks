@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fail Penyelaras Kursus | DJA50162 Vehicle Dynamics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <div class="logo-circle">PKS</div>
+      </div>
+      <div class="header-text">
+        <p class="header-institution">POLITEKNIK KUCHING SARAWAK</p>
+        <h1 class="header-title">FAIL PENYELARAS KURSUS</h1>
+        <p class="header-subtitle">
+          <span class="badge-code">DJA50162</span>
+          Vehicle Dynamics
+          <span class="header-divider">|</span>
+          Sesi I: 2026/2027
+        </p>
+      </div>
+      <div class="header-seal">
+        <div class="seal-circle">
+          <span class="seal-top">JABATAN</span>
+          <span class="seal-mid">KEJ. MEKANIKAL</span>
+          <span class="seal-bot">PKS</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== NAVIGATION TABS ===== -->
+  <nav class="tab-nav">
+    <div class="tab-nav-inner">
+      <button class="tab-btn active" data-tab="maklumat">📋 Maklumat Kursus</button>
+      <button class="tab-btn" data-tab="penilaian">📊 Penilaian</button>
+      <button class="tab-btn" data-tab="jadual">📅 Jadual Kuliah</button>
+      <button class="tab-btn" data-tab="dokumen">📂 Dokumen</button>
+      <button class="tab-btn" data-tab="pelajar">👥 Pelajar</button>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content">
+
+    <!-- ===== TAB: MAKLUMAT KURSUS ===== -->
+    <section id="tab-maklumat" class="tab-section active">
+
+      <!-- Info Cards -->
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="card-icon">🎓</div>
+          <div class="card-body">
+            <p class="card-label">Jumlah Pelajar</p>
+            <p class="card-value" id="cardJumlahPelajar">—</p>
+            <p class="card-sub">Berdaftar</p>
+            <p class="card-pecahan" id="cardPecahanPelajar"></p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">📝</div>
+          <div class="card-body">
+            <p class="card-label">Komponen Penilaian</p>
+            <p class="card-value">6</p>
+            <p class="card-sub">Komponen</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">⏱️</div>
+          <div class="card-body">
+            <p class="card-label">Kredit Jam</p>
+            <p class="card-value">2</p>
+            <p class="card-sub">Jam Kredit</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">📆</div>
+          <div class="card-body">
+            <p class="card-label">Sesi Pengajian</p>
+            <p class="card-value" style="font-size:1rem;">Sesi I</p>
+            <p class="card-sub">2026/2027</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maklumat Kursus + Penyelaras -->
+      <div class="two-col">
+
+        <!-- Maklumat Kursus -->
+        <div class="panel">
+          <div class="panel-header">
+            <span>📚</span> MAKLUMAT KURSUS
+          </div>
+          <div class="panel-body">
+            <table class="info-table">
+              <tr>
+                <td class="info-key">Kod Kursus</td>
+                <td class="info-val"><strong>DJA50162</strong></td>
+              </tr>
+              <tr>
+                <td class="info-key">Nama Kursus</td>
+                <td class="info-val"><strong>Vehicle Dynamics</strong></td>
+              </tr>
+              <tr>
+                <td class="info-key">Kredit Jam</td>
+                <td class="info-val">2 Jam Kredit</td>
+              </tr>
+              <tr>
+                <td class="info-key">Jabatan</td>
+                <td class="info-val">Kejuruteraan Mekanikal</td>
+              </tr>
+              <tr>
+                <td class="info-key">Sesi</td>
+                <td class="info-val">Sesi I: 2026/2027</td>
+              </tr>
+              <tr>
+                <td class="info-key">Semester</td>
+                <td class="info-val">Semester 5</td>
+              </tr>
+              <tr>
+                <td class="info-key">Bahasa Pengajaran</td>
+                <td class="info-val">Bahasa Melayu / Inggeris</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Maklumat Penyelaras -->
+        <div class="panel">
+          <div class="panel-header">
+            <span>👨‍💼</span> MAKLUMAT PENYELARAS KURSUS
+          </div>
+          <div class="panel-body">
+            <div class="coordinator-profile">
+              <div class="coordinator-avatar">AA</div>
+              <div class="coordinator-name">ASHRAF AZZAM BIN ZULKIFLI AMIN</div>
+            </div>
+            <table class="info-table">
+              <tr>
+                <td class="info-key">Jawatan</td>
+                <td class="info-val">Pensyarah</td>
+              </tr>
+              <tr>
+                <td class="info-key">Jabatan</td>
+                <td class="info-val">Kejuruteraan Mekanikal</td>
+              </tr>
+              <tr>
+                <td class="info-key">Institusi</td>
+                <td class="info-val">Politeknik Kuching Sarawak</td>
+              </tr>
+              <tr>
+                <td class="info-key">Email</td>
+                <td class="info-val"><a href="mailto:ashraf@poliku.edu.my">ashraf@poliku.edu.my</a></td>
+              </tr>
+              <tr>
+                <td class="info-key">No. Telefon</td>
+                <td class="info-val">082-845 596</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== TAB: PENILAIAN ===== -->
+    <section id="tab-penilaian" class="tab-section">
+      <div class="section-title">
+        <h2>📊 Komponen Penilaian Kursus</h2>
+        <p>DJA50162 Vehicle Dynamics — Sesi I: 2026/2027</p>
+      </div>
+
+      <div class="two-col">
+
+        <!-- Jadual Penilaian -->
+        <div class="panel">
+          <div class="panel-header"><span>📋</span> JADUAL KOMPONEN PENILAIAN</div>
+          <div class="panel-body">
+
+            <!-- Pemilih Kelas -->
+            <div class="kelas-bar">
+              <div class="kelas-tabs" id="kelasTabs"></div>
+              <button class="btn-tambah-kelas" id="btnTambahKelas">+ Kelas</button>
+            </div>
+            <div class="kelas-add-form" id="kelasAddForm" style="display:none;">
+              <input type="text" id="inputNamaKelas" placeholder="cth: DJA5A" maxlength="20" />
+              <button class="btn-simpan-kelas" id="btnSimpanKelas">✓</button>
+              <button class="btn-batal-kelas" id="btnBatalKelas">✕</button>
+            </div>
+
+            <table class="assessment-table" id="penilaianTable">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Komponen</th>
+                  <th>Wajaran</th>
+                  <th id="statusColHeader">Status</th>
+                </tr>
+              </thead>
+              <tbody id="penilaianTbody">
+                <tr data-row="1">
+                  <td class="center">1</td>
+                  <td>📝 Test</td>
+                  <td class="center"><span class="weight-badge">15%</span></td>
+                  <td class="center"><span class="status-badge pending" data-id="1">Belum Mula</span></td>
+                </tr>
+                <tr data-row="2">
+                  <td class="center">2</td>
+                  <td>🧪 Quiz 1</td>
+                  <td class="center"><span class="weight-badge">5%</span></td>
+                  <td class="center"><span class="status-badge pending" data-id="2">Belum Mula</span></td>
+                </tr>
+                <tr data-row="3">
+                  <td class="center">3</td>
+                  <td>🧪 Quiz 2</td>
+                  <td class="center"><span class="weight-badge">5%</span></td>
+                  <td class="center"><span class="status-badge pending" data-id="3">Belum Mula</span></td>
+                </tr>
+                <tr data-row="4">
+                  <td class="center">4</td>
+                  <td>🎤 Presentation</td>
+                  <td class="center"><span class="weight-badge">10%</span></td>
+                  <td class="center"><span class="status-badge pending" data-id="4">Belum Mula</span></td>
+                </tr>
+                <tr data-row="5">
+                  <td class="center">5</td>
+                  <td>📂 Case Study</td>
+                  <td class="center"><span class="weight-badge">15%</span></td>
+                  <td class="center"><span class="status-badge pending" data-id="5">Belum Mula</span></td>
+                </tr>
+                <tr data-row="6">
+                  <td class="center">6</td>
+                  <td>🏆 Final Exam</td>
+                  <td class="center"><span class="weight-badge">50%</span></td>
+                  <td class="center"><span class="status-badge pending" data-id="6">Belum Mula</span></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="2"><strong>JUMLAH KESELURUHAN</strong></td>
+                  <td class="center"><strong>100%</strong></td>
+                  <td id="padamKelasTd" class="center"></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+        <!-- Carta Pai -->
+        <div class="panel">
+          <div class="panel-header"><span>🥧</span> CARTA WAJARAN PENILAIAN</div>
+          <div class="panel-body chart-panel">
+            <canvas id="assessmentChart"></canvas>
+            <div class="chart-legend" id="chartLegend"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== TAB: JADUAL KULIAH ===== -->
+    <section id="tab-jadual" class="tab-section">
+      <div class="section-title">
+        <h2>📅 Jadual Kuliah & Tutorial</h2>
+        <p>DJA50162 Vehicle Dynamics — Sesi I: 2026/2027</p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <span>🗓️</span> JADUAL WAKTU KURSUS
+          <button class="btn-add-sesi" id="btnTambahSesi">+ Tambah Sesi</button>
+        </div>
+        <div class="panel-body">
+          <table class="assessment-table" id="jadualTable">
+            <thead>
+              <tr>
+                <th>Hari</th>
+                <th>Masa</th>
+                <th>Tempat / Bilik</th>
+                <th>Jenis Sesi</th>
+                <th>Kumpulan</th>
+                <th style="width:48px;"></th>
+              </tr>
+            </thead>
+            <tbody id="jadualTbody">
+              <tr>
+                <td><strong>Isnin</strong></td>
+                <td>8:00 pagi – 10:00 pagi</td>
+                <td>Dewan Kuliah A</td>
+                <td><span class="type-badge kuliah">Kuliah</span></td>
+                <td>DJA5A</td>
+                <td class="center"><button class="btn-padam-row" title="Padam baris ini">🗑</button></td>
+              </tr>
+              <tr>
+                <td><strong>Rabu</strong></td>
+                <td>2:00 ptg – 4:00 ptg</td>
+                <td>Makmal Automotif</td>
+                <td><span class="type-badge tutorial">Tutorial</span></td>
+                <td>DJA5A</td>
+                <td class="center"><button class="btn-padam-row" title="Padam baris ini">🗑</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Modal Tambah Sesi -->
+      <div class="modal-overlay" id="modalTambahSesi">
+        <div class="modal-box">
+          <div class="modal-header">
+            <h3>+ Tambah Sesi Baru</h3>
+            <button class="modal-close" id="btnModalTutup">✕</button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Hari <span class="required">*</span></label>
+              <select id="inputHari">
+                <option value="">-- Pilih Hari --</option>
+                <option>Ahad</option>
+                <option>Isnin</option>
+                <option>Selasa</option>
+                <option>Rabu</option>
+                <option>Khamis</option>
+                <option>Jumaat</option>
+                <option>Sabtu</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Masa <span class="required">*</span></label>
+              <input type="text" id="inputMasa" placeholder="cth: 8:00 pagi – 10:00 pagi" />
+            </div>
+            <div class="form-group">
+              <label>Tempat / Bilik <span class="required">*</span></label>
+              <input type="text" id="inputTempat" placeholder="cth: Dewan Kuliah A" />
+            </div>
+            <div class="form-group">
+              <label>Jenis Sesi <span class="required">*</span></label>
+              <select id="inputJenis">
+                <option value="">-- Pilih Jenis --</option>
+                <option value="kuliah">Kuliah</option>
+                <option value="tutorial">Tutorial</option>
+                <option value="amali">Amali</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Kumpulan</label>
+              <input type="text" id="inputKumpulan" placeholder="cth: DJA5A" />
+            </div>
+            <p class="form-error" id="formError"></p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn-batal" id="btnBatal">Batal</button>
+            <button class="btn-simpan" id="btnSimpan">✓ Simpan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:24px;">
+        <div class="panel-header"><span>📌</span> TARIKH PENTING</div>
+        <div class="panel-body">
+
+          <!-- Pemilih Kelas Tarikh Penting (dikongsi dengan penilaian) -->
+          <div class="kelas-bar" id="tarikhKelasBar">
+            <div class="kelas-tabs" id="tarikhKelasTabs"></div>
+          </div>
+          <p class="tarikh-kelas-label" id="tarikhKelasLabel"></p>
+
+          <table class="assessment-table" id="tarikhTable">
+            <thead>
+              <tr>
+                <th style="width:160px;">Tarikh</th>
+                <th>Peristiwa / Aktiviti</th>
+                <th>Catatan</th>
+              </tr>
+            </thead>
+            <tbody id="tarikhTbody">
+              <tr data-tarikh-id="1">
+                <td class="tarikh-cell" data-id="1"><span class="tarikh-display">—</span></td>
+                <td>Test</td>
+                <td class="catatan-cell" data-catatan-id="1" data-default="Minggu kuliah ke-7"><span class="catatan-display">Minggu kuliah ke-7</span></td>
+              </tr>
+              <tr data-tarikh-id="2">
+                <td class="tarikh-cell" data-id="2"><span class="tarikh-display">—</span></td>
+                <td>Quiz 1</td>
+                <td class="catatan-cell" data-catatan-id="2" data-default="Minggu kuliah ke-4"><span class="catatan-display">Minggu kuliah ke-4</span></td>
+              </tr>
+              <tr data-tarikh-id="3">
+                <td class="tarikh-cell" data-id="3"><span class="tarikh-display">—</span></td>
+                <td>Quiz 2</td>
+                <td class="catatan-cell" data-catatan-id="3" data-default="Minggu kuliah ke-10"><span class="catatan-display">Minggu kuliah ke-10</span></td>
+              </tr>
+              <tr data-tarikh-id="4">
+                <td class="tarikh-cell" data-id="4"><span class="tarikh-display">—</span></td>
+                <td>Presentation</td>
+                <td class="catatan-cell" data-catatan-id="4" data-default="Minggu kuliah ke-12"><span class="catatan-display">Minggu kuliah ke-12</span></td>
+              </tr>
+              <tr data-tarikh-id="5">
+                <td class="tarikh-cell" data-id="5"><span class="tarikh-display">—</span></td>
+                <td>Case Study (Hantar)</td>
+                <td class="catatan-cell" data-catatan-id="5" data-default="Minggu kuliah ke-14"><span class="catatan-display">Minggu kuliah ke-14</span></td>
+              </tr>
+              <tr data-tarikh-id="6">
+                <td class="tarikh-cell" data-id="6"><span class="tarikh-display">—</span></td>
+                <td>Final Exam</td>
+                <td class="catatan-cell" data-catatan-id="6" data-default="Mengikut jadual peperiksaan PKS"><span class="catatan-display">Mengikut jadual peperiksaan PKS</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TAB: DOKUMEN ===== -->
+    <section id="tab-dokumen" class="tab-section">
+      <div class="section-title">
+        <h2>📂 Dokumen Kursus</h2>
+        <p>DJA50162 Vehicle Dynamics — Sesi I: 2026/2027</p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header"><span>📁</span> SENARAI DOKUMEN RASMI</div>
+        <div class="panel-body">
+          <div class="doc-list">
+
+            <div class="doc-item">
+              <div class="doc-icon">📄</div>
+              <div class="doc-info">
+                <p class="doc-name">Rancangan Pengajaran Pembelajaran (RPP)</p>
+                <p class="doc-meta">Dokumen rasmi — Sesi I: 2026/2027</p>
+              </div>
+              <a href="#" class="btn-download">⬇ Muat Turun</a>
+            </div>
+
+            <div class="doc-item">
+              <div class="doc-icon">📋</div>
+              <div class="doc-info">
+                <p class="doc-name">Rubrik Penilaian</p>
+                <p class="doc-meta">Kriteria penilaian semua komponen</p>
+              </div>
+              <a href="#" class="btn-download">⬇ Muat Turun</a>
+            </div>
+
+            <div class="doc-item">
+              <div class="doc-icon">📝</div>
+              <div class="doc-info">
+                <p class="doc-name">Soalan Peperiksaan Pertengahan Semester</p>
+                <p class="doc-meta">Test — 15% wajaran</p>
+              </div>
+              <a href="#" class="btn-download">⬇ Muat Turun</a>
+            </div>
+
+            <div class="doc-item">
+              <div class="doc-icon">📊</div>
+              <div class="doc-info">
+                <p class="doc-name">Borang Pemantauan Kursus</p>
+                <p class="doc-meta">Pemantauan berkala prestasi pelajar</p>
+              </div>
+              <a href="#" class="btn-download">⬇ Muat Turun</a>
+            </div>
+
+            <div class="doc-item">
+              <div class="doc-icon">🗂️</div>
+              <div class="doc-info">
+                <p class="doc-name">Panduan Case Study</p>
+                <p class="doc-meta">Arahan dan format penulisan Case Study</p>
+              </div>
+              <a href="#" class="btn-download">⬇ Muat Turun</a>
+            </div>
+
+            <div class="doc-item">
+              <div class="doc-icon">🎤</div>
+              <div class="doc-info">
+                <p class="doc-name">Panduan Presentation</p>
+                <p class="doc-meta">Kriteria dan rubrik pembentangan</p>
+              </div>
+              <a href="#" class="btn-download">⬇ Muat Turun</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TAB: PELAJAR ===== -->
+    <section id="tab-pelajar" class="tab-section">
+      <div class="section-title">
+        <h2>👥 Senarai Pelajar</h2>
+        <p>DJA50162 Vehicle Dynamics — Sesi I: 2026/2027</p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <span>👥</span> SENARAI PELAJAR
+          <div class="pelajar-header-actions">
+            <select class="pelajar-kelas-select" id="pelajarKelasSelect">
+              <option value="">-- Pilih Kelas --</option>
+            </select>
+            <label class="btn-upload-label" for="uploadPelajar">⬆ Muat Naik CSV/Excel</label>
+            <input type="file" id="uploadPelajar" accept=".csv,.xlsx,.xls" style="display:none;" />
+            <button class="btn-clear-pelajar" id="btnClearPelajar">🗑 Kosongkan</button>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="upload-hint" id="uploadHint">
+            <div class="upload-hint-icon">📂</div>
+            <p><strong>Muat naik senarai pelajar</strong></p>
+            <p>Format: CSV atau Excel (.xlsx) dengan lajur <strong>Nama</strong> dan <strong>No. Matrik</strong></p>
+            <p class="upload-hint-example">Contoh: <code>Nama,No Matrik</code> pada baris pertama</p>
+            <label class="btn-upload-big" for="uploadPelajar">⬆ Pilih Fail</label>
+          </div>
+
+          <div id="pelajarTableWrap" style="display:none;">
+            <div class="pelajar-stats">
+              <span>Kelas: <strong id="pelajarKelasLabel">—</strong></span>
+              <span>Jumlah Pelajar: <strong id="pelajarJumlah">0</strong> orang</span>
+            </div>
+            <table class="assessment-table" id="pelajarTable">
+              <thead>
+                <tr>
+                  <th style="width:48px;">Bil.</th>
+                  <th>Nama Pelajar</th>
+                  <th>No. Matrik</th>
+                </tr>
+              </thead>
+              <tbody id="pelajarTbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:16px;">
+        <div class="panel-header"><span>ℹ️</span> FORMAT FAIL YANG DITERIMA</div>
+        <div class="panel-body">
+          <table class="assessment-table">
+            <thead>
+              <tr><th>Format</th><th>Penerangan</th><th>Contoh</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>CSV</strong></td>
+                <td>Fail teks ringkas, boleh eksport dari Excel</td>
+                <td><code>Nama,No Matrik</code> pada baris 1</td>
+              </tr>
+              <tr>
+                <td><strong>Excel (.xlsx)</strong></td>
+                <td>Fail Microsoft Excel</td>
+                <td>Lajur A = Nama, Lajur B = No. Matrik</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-wrap">
+        <div class="logo-circle-sm">PKS</div>
+        <div>
+          <p class="footer-inst">POLITEKNIK KUCHING SARAWAK</p>
+          <p class="footer-addr">Jalan Matang, 93050 Kuching, Sarawak, Malaysia</p>
+        </div>
+      </div>
+      <div class="footer-copy">
+        <p>Fail Penyelaras Kursus — DJA50162 Vehicle Dynamics</p>
+        <p>© 2026 Politeknik Kuching Sarawak. Hak Cipta Terpelihara.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
